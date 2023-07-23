@@ -24,15 +24,18 @@ export function logOut() {
 export function getToken() {
   // getItem will return null if the key does not exists
   const token = localStorage.getItem("token");
-  if (!token) return null;
+  if (!token && token !== undefined) return null;
   const payload = JSON.parse(atob(token.split(".")[1]));
+  console.log("atob invoked");
   // A JWT's exp is expressed in seconds, not miliseconds
   if (payload.exp * 1000 < Date.now()) {
     // Token has expired
     localStorage.removeItem("token");
     return null;
+    console.log("null returned");
   }
   return token;
+  console.log("toke returned");
 }
 
 export function getUser() {
@@ -40,6 +43,6 @@ export function getUser() {
   return token ? JSON.parse(atob(token.split(".")[1])).user : null;
 }
 
-export function checkToken() {
+export async function checkToken() {
   return usersAPI.checkToken().then((dateStr) => new Date(dateStr));
 }
