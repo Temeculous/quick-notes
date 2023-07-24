@@ -1,7 +1,7 @@
 export default function NotesForm() {
-  function handleChange(e) {}
+  const handleChange = (e) => {};
 
-  function handleSubmit(e) {}
+  const handleSubmit = async (e) => {};
 
   return (
     <>
