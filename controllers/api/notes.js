@@ -1,10 +1,17 @@
 const Note = require("../../models/note");
 
 module.exports = {
-  show,
+  index,
   create,
 };
 
-function create(req, res) {}
+async function create(req, res) {
+  console.log(req.body);
+  let newNote = await Note.create(req.body);
+  res.json(newNote);
+}
 
-function show(req, res) {}
+async function index(req, res) {
+  let notes = await Note.find(req.body.user);
+  res.json(notes);
+}

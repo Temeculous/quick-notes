@@ -7,6 +7,7 @@ import NewOrderPage from "../NewOrderPage/NewOrderPage";
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import NotesPage from "../NotesPage/NotesPage";
 import NavBar from "../../components/NavBar/NavBar";
+// import { getNotes } from "../../utilities/notes-services";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -29,7 +30,7 @@ export default function App() {
             <Route
               path="/notes"
               element={
-                <NotesPage user={user} notes={notes} setNotes={setNotes} />
+                <NotesPage user={user} notes={notes} addNotes={addNotes} />
               }
             />
           </Routes>
