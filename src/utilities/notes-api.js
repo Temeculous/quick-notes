@@ -6,6 +6,6 @@ export function create(newNote) {
   return sendRequest(BASE_URL, "POST", newNote);
 }
 
-// export function getNotes(user) {
-//   return sendRequest(BASE_URL, "GET", user);
-// }
+export function getNotes(user) {
+  return sendRequest(`${BASE_URL}/get-user-notes`, "GET", user);
+}

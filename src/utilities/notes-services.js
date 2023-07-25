@@ -5,7 +5,7 @@ export async function createNote(text, user) {
   return notesAPI.create(newNote);
 }
 
-// export async function getNotes(user) {
-//   let notes = await notesAPI.getNotes(user);
-//   return notes;
-// }
+export async function getNotes(user) {
+  let notes = await notesAPI.getNotes(user);
+  return notes;
+}

@@ -6,6 +6,6 @@ const noteCtrl = require("../../controllers/api/notes");
 //post new note
 router.post("/", noteCtrl.create);
 //get all notes
-router.get("/", noteCtrl.index);
+router.post("/get-user-notes", noteCtrl.findNoteByUser);
 
 module.exports = router;
